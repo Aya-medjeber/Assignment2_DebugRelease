@@ -58,5 +58,16 @@ int main()
         students.push_back(student);
     }
 
+#ifdef _DEBUG
+    // Display the stored students only in Debug builds.
+    std::cout << "Students loaded: " << students.size() << "\n\n";
+
+    for (const STUDENT_DATA& student : students)
+    {
+        std::cout << student.firstName << " "
+            << student.lastName << '\n';
+    }
+#endif
+
     return 0;
 }
